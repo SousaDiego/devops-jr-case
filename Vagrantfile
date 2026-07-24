@@ -19,4 +19,7 @@ Vagrant.configure("2") do |config|
 
   # Compartilha a pasta do projeto com a VM
   config.vm.synced_folder ".", "/vagrant"
+
+  # Exposição da aplicação Kubernetes
+config.vm.network "forwarded_port", guest: 30050, host: 30050
 end
